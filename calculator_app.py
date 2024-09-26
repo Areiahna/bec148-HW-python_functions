@@ -21,7 +21,18 @@ def multi(a,b):
 #------------------------
 
 def divi(a,b):
-    return (int(a) / int(b))
+
+    try:
+        answer = (int(a)/int(b))
+        message = print(f"{a} / {b} = {answer}")
+        return message
+        
+    except ZeroDivisionError:
+        print("="*50)
+        print("CANNOT DIVIDE NUMBERS BY 0 !")
+        print("="*50)
+        calculate()
+   
 
 # print(f"Testing division function: {divi(8,4)}\n Should return 2.0")
 
@@ -43,7 +54,7 @@ def calculate():
             print("="*50)
             print("ENTER NUMBERS ONLY\n")
             pass
-        
+
         else:
 
             while True: 
@@ -60,7 +71,7 @@ def calculate():
                     print(f"{num1} * {num2} = {multi(num1,num2)}")
                     break
                 elif(choice == "/"):
-                    print(f"{num1} / {num2} = {divi(num1,num2)}")
+                    divi(num1,num2)
                     break
                 else:
                     print("="*50)
